@@ -10,7 +10,14 @@
 	<script>
 		function secondHighest(arr) {
 			//Write your code here
+			if(arr.length==0 || arr.length==1){
+				return -Infinity;
+			}
 			
+			const unique = [...new Set(arr)];
+			
+  unique.sort((a, b) => b - a);
+  return unique.length >= 2 ? unique[1] : -Infinity;
 		}
 
 		function Main() {
